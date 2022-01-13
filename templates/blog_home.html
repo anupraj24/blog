@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            blog_html
+        </title>
+    </head>
+    <body style='width:50%; margin: auto;'>
+       <h1> all the blogs</h1> 
+       <h1>{{name}}</h1>
+
+       {% for blog in blogs %}
+                <div>
+                    <a href="/blog/{{ blog.id }}/"> 
+                    <img width="400px" height="200px" src='/media/{{ blog.thumbnail}}'>
+                    <h1> {{ blog.title }} </h1>
+                    </a>
+                </div>
+
+       {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        home page
+    </title>
+    <body style='margin: auto; width: 50%;'>
+        <h1>welcome to our website</h1>
+
+        <h1> you can visit following pages</h1>
+
+        {% if request.user.is_authenticated %}
+            <h4>already loggedin</h4>
+            <p>your username: {{ request.user.username }}</p>
+            <a href='/account/logout/'>click here to logout</a>
+
+        {% else %}
+        
+            <a href = 'account/signup/'>creat your account</a><br>
+            <a href = 'account/login/'>login</a>
+        
+        {% endif %}
+
+        <ul>
+            <li><a href = '/blog/'>read blogs</a></li>
+            <li><a href = '/comment/'>comment</a></li>
+            <li><a href = '/media/'>media</a></li>
+           
+        </ul>
+    </body>
+</html>
